@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { Increment, Decrement } from '@state/counter/counter.actions';
+import { State } from '@state/counter/counter.state';
 
 @Component({
   selector: 'app-about',
@@ -6,9 +11,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent implements OnInit {
+  count$: Observable<State>;
 
-  constructor() { }
+  constructor(private store: Store<State>) {
+    this.count$ = store.pipe(select('count'));
+  }
+  increment() {
+    this.store.dispatch(new Increment());
+  }
 
+  decrement() {
+    this.store.dispatch(new Decrement());
+  }
   ngOnInit() {
   }
 

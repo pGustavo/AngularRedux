@@ -3,6 +3,11 @@
     <div class="alert alert-success col mt-4" role="alert">
       Home work!
     </div>
+
+    <button (click)="increment()" class="btn btn-success ml-1">Increment</button>            <!--Add-->
+    <button (click)="decrement()" class="btn btn-danger ml-1">Decrement</button>            <!--Add-->
+
+    <div>Current Count: {{ ( count$ | async ).counter }}</div>  <!--Add-->
   </div>
 </div>
 
