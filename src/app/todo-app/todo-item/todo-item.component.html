@@ -1,0 +1,9 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{(todoList$ | async)[index].name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Item number: {{index}}</h6>
+    <input type="checkbox" [ngModel]="(todoList$ | async)[index].done" (click)="toggleTodo(index)"/>
+    {{(todoList$ | async)[index].name}}
+    <p class="text-right"><a routerLink="/todo">Close</a></p>
+  </div>
+</div>

@@ -13,15 +13,9 @@ import { State } from '@state/todo-list/todo-list.state';
 
 export class TodoAppComponent implements OnInit {
 
-  show = false;
-
   constructor(private store: Store<State>) {
   }
 
   ngOnInit() {
-  }
-
-  toggle() {
-    this.show = !this.show;
   }
 }

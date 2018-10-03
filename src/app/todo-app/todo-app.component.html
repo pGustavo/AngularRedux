@@ -9,7 +9,7 @@
 
   <hr>
 
-  <h3>Debug Stuff</h3>
-  <button class="btn btn-sm" (click)="toggle()">Show debug</button>
-  <pre *ngIf="show">{{todoList$ | async | json}}</pre>
+  <router-outlet></router-outlet>
 </div>
+
+

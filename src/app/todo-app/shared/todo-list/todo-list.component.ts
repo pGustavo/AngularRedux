@@ -13,6 +13,7 @@ import { State } from '@state/todo-list/todo-list.state';
 export class TodoListComponent implements OnInit {
 
   todoList$: Observable<any>;
+  show = false;
 
   constructor(private store: Store<State>) {
     this.todoList$ = store.pipe(select('todoList'));
@@ -25,6 +26,9 @@ export class TodoListComponent implements OnInit {
     this.store.dispatch(
       new ToggleTodo({ index })
     );
+  }
+  toggle() {
+    this.show = !this.show;
   }
 
 }
