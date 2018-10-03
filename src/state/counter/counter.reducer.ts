@@ -15,6 +15,11 @@ export function counterReducer(state = initialState, action: CounterActions): St
         ...state,
         counter: state.counter - 1
       };
+    case CounterActionTypes.LOAD_SUCCEEDED:
+      return {
+        ...state,
+        counter: action.payload.counter
+      };
 
     default: {
       return state;
